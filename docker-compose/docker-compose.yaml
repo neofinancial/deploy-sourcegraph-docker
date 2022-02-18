@@ -24,14 +24,13 @@ services:
       - PGUSER=${POSTGRES_USER}
       - PGPASSWORD=${POSTGRES_PASS}
       - PGDATABASE=${POSTGRES_DB}
-      - PGSSLMODE=enable
-
+      - PGSSLMODE=require
       - CODEINTEL_PGHOST=${CODEINTEL_HOST}
       - CODEINTEL_PGPORT=${CODEINTEL_PORT}
       - CODEINTEL_PGUSER=${CODEINTEL_USER}
       - CODEINTEL_PGPASSWORD=${CODEINTEL_PASS}
       - CODEINTEL_PGDATABASE=${CODEINTEL_DB}
-      - CODEINTEL_PGSSLMODE=enable
+      - CODEINTEL_PGSSLMODE=require
 
       # If you are not running code insights, please see:
       # https://docs.sourcegraph.com/admin/install/docker-compose/operations#database-migrations for more information
@@ -128,7 +127,17 @@ services:
       - GOMAXPROCS=12
       - JAEGER_AGENT_HOST=jaeger
       - PGHOST=${POSTGRES_HOST}
+      - PGPORT=${POSTGRES_PORT}
+      - PGUSER=${POSTGRES_USER}
+      - PGPASSWORD=${POSTGRES_PASS}
+      - PGDATABASE=${POSTGRES_DB}
+      - PGSSLMODE=require
       - CODEINTEL_PGHOST=${CODEINTEL_HOST}
+      - CODEINTEL_PGPORT=${CODEINTEL_PORT}
+      - CODEINTEL_PGUSER=${CODEINTEL_USER}
+      - CODEINTEL_PGPASSWORD=${CODEINTEL_PASS}
+      - CODEINTEL_PGDATABASE=${CODEINTEL_DB}
+      - CODEINTEL_PGSSLMODE=require
       - CODEINSIGHTS_PGDATASOURCE=postgres://postgres:password@codeinsights-db:5432/postgres
       - 'SRC_GIT_SERVERS=gitserver-0:3178'
       - 'SRC_SYNTECT_SERVER=http://syntect-server:9238'
@@ -171,7 +180,17 @@ services:
       - DEPLOY_TYPE=docker-compose
       - GOMAXPROCS=4
       - PGHOST=${POSTGRES_HOST}
+      - PGPORT=${POSTGRES_PORT}
+      - PGUSER=${POSTGRES_USER}
+      - PGPASSWORD=${POSTGRES_PASS}
+      - PGDATABASE=${POSTGRES_DB}
+      - PGSSLMODE=require
       - CODEINTEL_PGHOST=${CODEINTEL_HOST}
+      - CODEINTEL_PGPORT=${CODEINTEL_PORT}
+      - CODEINTEL_PGUSER=${CODEINTEL_USER}
+      - CODEINTEL_PGPASSWORD=${CODEINTEL_PASS}
+      - CODEINTEL_PGDATABASE=${CODEINTEL_DB}
+      - CODEINTEL_PGSSLMODE=require
       - CODEINSIGHTS_PGDATASOURCE=postgres://postgres:password@codeinsights-db:5432/postgres
       - 'SRC_GIT_SERVERS=gitserver-0:3178'
       - 'SRC_SYNTECT_SERVER=http://syntect-server:9238'
