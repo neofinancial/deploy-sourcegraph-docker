@@ -133,7 +133,12 @@ services:
       - CODEINTEL_PGPASSWORD=${CODEINTEL_PASS}
       - CODEINTEL_PGDATABASE=${CODEINTEL_DB}
       - CODEINTEL_PGSSLMODE=require
-      - CODEINSIGHTS_PGDATASOURCE=postgres://postgres:password@codeinsights-db:5432/postgres
+      - CODEINSIGHTS_PGHOST=codeinsights-db
+      - CODEINSIGHTS_PGPORT=5432
+      - CODEINSIGHTS_PGUSER=postgres
+      - CODEINSIGHTS_PGPASSWORD=password
+      - CODEINSIGHTS_PGDATABASE=postgres
+      - CODEINSIGHTS_PGSSLMODE=disable
       - 'SRC_GIT_SERVERS=gitserver-0:3178'
       - 'SRC_SYNTECT_SERVER=http://syntect-server:9238'
       - 'SEARCHER_URL=http://searcher-0:3181'
@@ -185,7 +190,12 @@ services:
       - CODEINTEL_PGPASSWORD=${CODEINTEL_PASS}
       - CODEINTEL_PGDATABASE=${CODEINTEL_DB}
       - CODEINTEL_PGSSLMODE=require
-      - CODEINSIGHTS_PGDATASOURCE=postgres://postgres:password@codeinsights-db:5432/postgres
+      - CODEINSIGHTS_PGHOST=codeinsights-db
+      - CODEINSIGHTS_PGPORT=5432
+      - CODEINSIGHTS_PGUSER=postgres
+      - CODEINSIGHTS_PGPASSWORD=password
+      - CODEINSIGHTS_PGDATABASE=postgres
+      - CODEINSIGHTS_PGSSLMODE=disable
       - 'SRC_GIT_SERVERS=gitserver-0:3178'
       - 'SRC_SYNTECT_SERVER=http://syntect-server:9238'
       - 'SEARCHER_URL=http://searcher-0:3181'
