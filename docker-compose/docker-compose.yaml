@@ -19,19 +19,19 @@ services:
     command:
       ["up"]
     environment:
-      - PGHOST=pgsql
-      - PGPORT=5432
-      - PGUSER=sg
-      - PGPASSWORD=sg
-      - PGDATABASE=sg
-      - PGSSLMODE=disable
+      - PGHOST=${POSTGRES_HOST}
+      - PGPORT=${POSTGRES_PORT}
+      - PGUSER=${POSTGRES_USER}
+      - PGPASSWORD=${POSTGRES_PASS}
+      - PGDATABASE=${POSTGRES_DB}
+      - PGSSLMODE=require
 
-      - CODEINTEL_PGHOST=codeintel-db
-      - CODEINTEL_PGPORT=5432
-      - CODEINTEL_PGUSER=sg
-      - CODEINTEL_PGPASSWORD=sg
-      - CODEINTEL_PGDATABASE=sg
-      - CODEINTEL_PGSSLMODE=disable
+      - CODEINTEL_PGHOST=${CODEINTEL_HOST}
+      - CODEINTEL_PGPORT=${CODEINTEL_PORT}
+      - CODEINTEL_PGUSER=${CODEINTEL_USER}
+      - CODEINTEL_PGPASSWORD=${CODEINTEL_PASS}
+      - CODEINTEL_PGDATABASE=${CODEINTEL_DB}
+      - CODEINTEL_PGSSLMODE=require
 
       # If you are not running code insights, please see: 
       # https://docs.sourcegraph.com/admin/install/docker-compose/operations#database-migrations for more information
