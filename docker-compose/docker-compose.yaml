@@ -45,11 +45,6 @@ services:
     restart: "on-failure"
     networks: 
       - sourcegraph
-    depends_on:
-      pgsql:
-        condition: service_healthy
-      codeintel-db:
-        condition: service_healthy
 
   # Description: Acts as a reverse proxy for all of the sourcegraph-frontend instances
   #
