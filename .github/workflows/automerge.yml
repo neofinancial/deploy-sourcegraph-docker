@@ -20,7 +20,7 @@ on:
   status: {}
 jobs:
   automerge:
-    runs-on: ubuntu-latest
+    runs-on: neo-x86-medium
     steps:
       - name: automerge
         uses: pascalgn/automerge-action@v0.12.0
